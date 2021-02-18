@@ -1,5 +1,3 @@
-package nl.jolanrensen.thesis.tuple
-
 import scala.Tuple1
 import scala.Tuple2
 import scala.Tuple3
