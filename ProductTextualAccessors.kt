@@ -1,5 +1,3 @@
-package nl.jolanrensen.thesis.tuple
-
 import scala.Product1
 import scala.Product2
 import scala.Product3
@@ -28,7 +26,7 @@ import scala.Product22
  * This file provides textual accessors instead of _1(), _2() etc. for Scala classes implementing ProductX, like Tuples.
  *
  * This means you can type `yourTuple.first`, `yourTuple.second`, etc., but also `yourTuple.last` to access
- * the value you require, similar to how [Pair] and [Tripple] name their values in Kotlin.
+ * the value you require, similar to how [Pair] and [Triple] name their values in Kotlin.
  *
  * by Jolan Rensen, 18-02-2021
  */
