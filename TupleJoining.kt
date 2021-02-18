@@ -1,5 +1,4 @@
 @file:Suppress("FunctionName", "RemoveExplicitTypeArguments")
-package nl.jolanrensen.thesis.tuple
 
 import scala.Tuple1
 import scala.Tuple2
