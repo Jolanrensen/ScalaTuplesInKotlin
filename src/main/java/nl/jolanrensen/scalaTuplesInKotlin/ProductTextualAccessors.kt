@@ -1,3 +1,5 @@
+package nl.jolanrensen.scalaTuplesInKotlin
+
 import scala.Product1
 import scala.Product2
 import scala.Product3
