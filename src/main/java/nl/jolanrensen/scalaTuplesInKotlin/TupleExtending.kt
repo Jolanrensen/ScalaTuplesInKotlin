@@ -39,10 +39,13 @@ import scala.Tuple22
  * and
  * ```c..t(a, b) == t(c, a, b)```
  *
+ * Note that ```t(a, b)..t(c, d)``` will not work due to it being ambiguous:
+ * It could mean both ```t(a, b, t(c, d))``` and ```t(t(a, b), c, d)```.
+ * So, for two tuples, you must use [appendedBy] and [prependedBy] explicitly.
  *
  * For concatenating two tuples, see [nl.jolanrensen.scalaTuplesInKotlin.concat].
  *
- * by Jolan Rensen, 18-02-2021
+ * by Jolan Rensen, 26-02-2021
  */
 
 // Easily extend tuples by function calls or using a..t(b)..c notation. This means that a..t(b) == t(a, b) and t(b)..a == t(b, a)

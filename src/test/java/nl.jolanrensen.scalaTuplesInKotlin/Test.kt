@@ -29,6 +29,10 @@ class Test {
         assert(
             1..tupleOf("test")..6L == tupleOf(1, "test", 6L)
         )
+
+        assert(
+            tupleOf(1).appendedBy(tupleOf("test")) == tupleOf(1, tupleOf("test"))
+        )
     }
 
 

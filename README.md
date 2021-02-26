@@ -45,7 +45,9 @@ and
 ```kotlin
 c..t(a, b) == t(c, a, b)
 ```
-
+Note that `t(a, b)..t(c, d)` will not work due to it being ambiguous:
+It could mean both `t(a, b, t(c, d))` and `t(t(a, b), c, d)`.
+So, for two tuples, you must use `appendedBy` and `prependedBy` explicitly.
 
 ## Product (Tuple) destructuring
 This project provides the operator functions to destructuring for Scala classes implementing `ProductX`, like Tuples.
