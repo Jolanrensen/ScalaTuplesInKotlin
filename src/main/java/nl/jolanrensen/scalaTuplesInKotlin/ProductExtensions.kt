@@ -18,6 +18,8 @@ import scala.jdk.javaapi.CollectionConverters
  * t(1, 2, 3).size == 3
  *
  * t(1, 2, 3)[0] == 1
+ *
+ * t(1, 1, 2)[1..2] == t(1, 2, 2)[0..1]
  * ```
  *
  *
@@ -36,3 +38,7 @@ val Product.size: Int
     get() = productArity()
 
 operator fun Product.get(index: Int): Any? = productElement(index)
+
+
+operator fun Product.get(indexRange: IntRange): List<Any?> = indexRange.map { productElement(it) }
+

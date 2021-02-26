@@ -44,7 +44,7 @@ class Test {
     }
 
     @Test
-    fun `Test tuple contains`() {
+    fun `Test tuple QOL functions`() {
         assert(
             1 in tupleOf(1, 2, 3)
         )
@@ -80,6 +80,21 @@ class Test {
 
         assert(
             tupleOf(1, 2, 3, 4)[0] == 1
+        )
+
+        assert(
+            tupleOf(1, 2, 3).toTriple() == Triple(1, 2, 3)
+        )
+
+        assert(
+            tupleOf(1, 2, 3, 4, 5, 6, 7)[1..3]
+                .containsAll(listOf(2, 3, 4))
+        )
+
+        assert(t(1, 1, 2)[1..2] == t(1, 2, 2)[0..1])
+
+        assert(
+            t(1, 2) == t(2, 1).swap()
         )
 
 
