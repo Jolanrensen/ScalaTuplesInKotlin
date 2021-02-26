@@ -50,7 +50,7 @@ It could mean both `t(a, b, t(c, d))` and `t(t(a, b), c, d)`.
 So, for two tuples, you must use `appendedBy` and `prependedBy` explicitly.
 
 ## Product (Tuple) destructuring
-This project provides the operator functions to destructuring for Scala classes implementing `ProductX`, like Tuples.
+This project provides the operator functions to destructuring for Scala classes implementing `Product`, like Tuples.
 This means you can type 
 ```kotlin
 val (a, b, c, d) = yourTuple
@@ -58,7 +58,7 @@ val (a, b, c, d) = yourTuple
 to unpack its values, similar to how `Pair`, `Triple` and other data classes work in Kotlin.
 
 ## Product (Tuple) textual accessors
-The project provides textual accessors instead of `_1()`, `_2()` etc. for Scala classes implementing `ProductX`, like Tuples.
+The project provides textual accessors instead of `_1()`, `_2()` etc. for Scala classes implementing `Product`, like Tuples.
 This means you can type 
 ```kotlin
 yourTuple.first
@@ -66,3 +66,18 @@ yourTuple.second
 yourTuple.last
 ```
 etc. to access the value you require, similar to how `Pair` and `Triple` name their values in Kotlin.
+
+## Quality of life extensions
+There are also some other extensions built for `Product` types like Tuples. For instance:
+
+```kotlin
+1 in t(1, 2, 3) == true
+
+for (x in t("a", "b", "c")) { /* ... */ }
+
+val a: List<Any?> = t(1, "a", 3L).asIterable().toList()
+
+t(1, 2, 3).size == 3
+
+t(1, 2, 3)[0] == 1
+```
