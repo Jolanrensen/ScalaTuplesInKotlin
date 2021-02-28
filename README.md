@@ -1,6 +1,10 @@
 # Scala Tuples In Kotlin
 This repo contains a bunch of files that provide extensions to make Scala Tuples easier to use in Kotlin.
 
+# How to install
+Check Jitpack:
+[![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin)
+
 # Examples
 ## Creation
 The project adds simple functional Tuple builders in the form of `tupleOf()` and `t()` for short.
