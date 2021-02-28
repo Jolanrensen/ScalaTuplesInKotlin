@@ -5,10 +5,30 @@ plugins {
     java
     kotlin("jvm") version "1.4.30"
     application
+
+    `maven-publish`
+    `java-library`
 }
 
 group = "nl.jolanrensen.scalaTuplesInKotlin"
 version = "1.0-SNAPSHOT"
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "nl.jolanrensen.scala-tuples-in-kotlin"
+            artifactId = "scala-tuples-in-kotlin"
+            version = "1.0-SNAPSHOT"
+
+            from(components["java"])
+        }
+    }
+}
 
 repositories {
 //    mavenLocal()
@@ -21,8 +41,10 @@ dependencies {
     implementation(kotlin("stdlib"))
     testImplementation("junit", "junit", "4.12")
 
-    implementation("org.scala-lang:scala-library:2.13.3") // <4>
-    implementation("org.scala-lang:scala-reflect:2.13.3")
+//    implementation("org.scala-lang:scala-library:2.13.3") // <4>
+//    implementation("org.scala-lang:scala-reflect:2.13.3")
+    implementation("org.scala-lang:scala-library:2.12.13") // <4>
+    implementation("org.scala-lang:scala-reflect:2.12.13")
 
 //    implementation("org.jetbrains.kotlinx.spark:kotlin-spark-api-3.0:1.0.0-preview3-SNAPSHOT")
 

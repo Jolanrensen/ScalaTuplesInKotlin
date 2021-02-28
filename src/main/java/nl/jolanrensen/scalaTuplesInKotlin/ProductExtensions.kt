@@ -1,7 +1,7 @@
 package nl.jolanrensen.scalaTuplesInKotlin
 
 import scala.Product
-import scala.jdk.javaapi.CollectionConverters
+import scala.collection.JavaConverters
 
 /**
  * Extra extensions for Scala [Product]s such as Tuples.
@@ -28,10 +28,10 @@ import scala.jdk.javaapi.CollectionConverters
 
 operator fun Product.contains(item: Any?): Boolean = productIterator().contains(item)
 
-operator fun Product.iterator(): Iterator<Any?> = CollectionConverters.asJava(productIterator())
+operator fun Product.iterator(): Iterator<Any?> = JavaConverters.asJavaIterator(productIterator())
 
 fun Product.asIterable(): Iterable<Any?> = object : Iterable<Any?> {
-    override fun iterator(): Iterator<Any?> = CollectionConverters.asJava(productIterator())
+    override fun iterator(): Iterator<Any?> = JavaConverters.asJavaIterator(productIterator())
 }
 
 val Product.size: Int

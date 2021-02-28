@@ -24,53 +24,53 @@ import scala.Product19
 import scala.Product20
 import scala.Product21
 import scala.Product22
-import scala.jdk.javaapi.CollectionConverters
+import scala.collection.JavaConverters
 
-operator fun <T> Product1<T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product2<T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product3<T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product4<T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product5<T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product6<T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product7<T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product8<T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product9<T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product10<T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product11<T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product12<T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product13<T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product14<T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product15<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product16<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product17<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product18<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product19<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product20<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product21<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
-operator fun <T> Product22<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })
+operator fun <T> Product1<T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product2<T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product3<T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product4<T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product5<T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product6<T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product7<T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product8<T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product9<T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product10<T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product11<T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product12<T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product13<T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product14<T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product15<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product16<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product17<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product18<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product19<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product20<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product21<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
+operator fun <T> Product22<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
 
-fun <T> Product1<T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product2<T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product3<T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product4<T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product5<T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product6<T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product7<T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product8<T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product9<T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product10<T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product11<T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product12<T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product13<T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product14<T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product15<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product16<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product17<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product18<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product19<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product20<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product21<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
-fun <T> Product22<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }
+fun <T> Product1<T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product2<T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product3<T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product4<T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product5<T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product6<T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product7<T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product8<T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product9<T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product10<T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product11<T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product12<T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product13<T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product14<T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product15<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product16<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product17<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product18<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product19<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product20<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product21<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
+fun <T> Product22<T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T, T>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }
 
 operator fun <T> Product1<T>.get(index: Int): T = productElement(index) as T
 operator fun <T> Product2<T, T>.get(index: Int): T = productElement(index) as T
