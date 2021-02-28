@@ -91,7 +91,9 @@ class Test {
                 .containsAll(listOf(2, 3, 4))
         )
 
-        assert(t(1, 1, 2)[1..2] == t(1, 2, 2)[0..1])
+        assert(
+            t(1, 1, 2)[1..2] == t(1, 2, 2)[0..1]
+        )
 
         assert(
             t(1, 2) == t(2, 1).swap()

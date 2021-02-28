@@ -68,14 +68,19 @@ yourTuple.last
 etc. to access the value you require, similar to how `Pair` and `Triple` name their values in Kotlin.
 
 ## Quality of life extensions
-There are also some other extensions built for `Product` types like Tuples. For instance:
+There are also some other extensions built for `Product` types like Tuples. 
+These extensions are sort of type-aware, meaning that `t(1, 2, 3).asIterable().toList()` will result in a `List<Int>`,
+while `t(1, "a", 3L).asIterable().toList()` will give a `List<Any?>`.
+For instance:
 
 ```kotlin
 1 in t(1, 2, 3) == true
 
-for (x in t("a", "b", "c")) { /* ... */ }
+for (x: String in t("a", "b", "c")) { /* ... */ }
 
 val a: List<Any?> = t(1, "a", 3L).asIterable().toList()
+
+val b: List<Int> = t(1, 5, 3).asIterable().toList()
 
 t(1, 2, 3).size == 3
 
