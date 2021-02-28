@@ -3,7 +3,7 @@ This repo contains a bunch of files that provide extensions to make Scala Tuples
 
 # How to install
 Check Jitpack:
-[![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin)
+[![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.13-SNAPSHOT)
 
 # Examples
 ## Creation
