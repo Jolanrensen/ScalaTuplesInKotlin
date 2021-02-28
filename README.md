@@ -6,7 +6,9 @@ Check Jitpack:
 
 Scala 2.13: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.13-SNAPSHOT)
 
-Scala 2.12: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.12-SNAPSHOT)
+Scala 2.12.10 (Kotlin Spark API): [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.12.10-SNAPSHOT)
+
+Scala 2.12.13: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.12-SNAPSHOT)
 
 # Examples
 ## Creation
