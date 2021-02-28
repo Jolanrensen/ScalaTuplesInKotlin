@@ -39,6 +39,5 @@ val Product.size: Int
 
 operator fun Product.get(index: Int): Any? = productElement(index)
 
-
 operator fun Product.get(indexRange: IntRange): List<Any?> = indexRange.map { productElement(it) }
 

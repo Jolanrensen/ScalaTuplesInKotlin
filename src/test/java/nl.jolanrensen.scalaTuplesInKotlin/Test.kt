@@ -65,13 +65,13 @@ class Test {
         }
 
         assert(
-            tupleOf(1, 2, 3).asIterable().map { it as Int }.isNotEmpty()
+            tupleOf(1, 2, 3).asIterable().toList().isNotEmpty()
         )
 
         assert(
             tupleOf(1, 2, 3)
                 .asIterable()
-                .none { (it as Int) > 4 }
+                .none { it > 4 }
         )
 
         assert(
@@ -96,7 +96,6 @@ class Test {
         assert(
             t(1, 2) == t(2, 1).swap()
         )
-
 
     }
 
