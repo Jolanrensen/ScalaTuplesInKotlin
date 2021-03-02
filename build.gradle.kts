@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 //    scala // not used here
     java
-    kotlin("jvm") version "1.4.30"
+    kotlin("jvm") version "1.4.31"
     application
 
     `maven-publish`
@@ -39,6 +39,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
     testImplementation("junit", "junit", "4.12")
 
 //    implementation("org.scala-lang:scala-library:2.13.3") // <4>

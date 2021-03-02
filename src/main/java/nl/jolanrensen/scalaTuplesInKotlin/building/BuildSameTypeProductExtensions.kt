@@ -6,7 +6,7 @@ private fun main() {
     for (a in alphabet) {
         val numbers = (1..a).toList()
         println(
-            "operator fun <T> Product$a<${numbers.joinToString { "T" }}>.iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T })"
+            "operator fun <T, ${ numbers.joinToString { "T$it: T" } }> Product$a<${numbers.joinToString { "T$it" }}>.iterator(): Iterator<T> =  JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })"
         )
     }
 
@@ -15,7 +15,7 @@ private fun main() {
     for (a in alphabet) {
         val numbers = (1..a).toList()
         println(
-            "fun <T> Product$a<${numbers.joinToString { "T" }}>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> = CollectionConverters.asJava<T>(productIterator().map<T> { it as T }) }"
+            "fun <T, ${ numbers.joinToString { "T$it: T" } }> Product$a<${numbers.joinToString { "T$it" }}>.asIterable(): Iterable<T> = object : Iterable<T> { override fun iterator(): Iterator<T> =  JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T }) }"
         )
     }
 
@@ -24,7 +24,7 @@ private fun main() {
     for (a in alphabet) {
         val numbers = (1..a).toList()
         println(
-            "operator fun <T> Product$a<${numbers.joinToString { "T" }}>.get(index: Int): T = productElement(index) as T"
+            "operator fun <T, ${ numbers.joinToString { "T$it: T" } }> Product$a<${numbers.joinToString { "T$it" }}>.get(index: Int): T = productElement(index) as T"
         )
     }
 
@@ -33,7 +33,7 @@ private fun main() {
     for (a in alphabet) {
         val numbers = (1..a).toList()
         println(
-            "operator fun <T> Product$a<${numbers.joinToString { "T" }}>.get(indexRange: IntRange): List<T> = indexRange.map { productElement(it) as T }"
+            "operator fun <T, ${ numbers.joinToString { "T$it: T" } }> Product$a<${numbers.joinToString { "T$it" }}>.get(indexRange: IntRange): List<T> = indexRange.map { productElement(it) as T }"
         )
     }
 }

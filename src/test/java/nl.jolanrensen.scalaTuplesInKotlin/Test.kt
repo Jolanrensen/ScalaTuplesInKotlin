@@ -1,6 +1,7 @@
 package nl.jolanrensen.scalaTuplesInKotlin
 
 import org.junit.Test
+import kotlin.reflect.typeOf
 
 
 class Test {
@@ -71,7 +72,9 @@ class Test {
         assert(
             tupleOf(1, 2, 3)
                 .asIterable()
-                .none { it > 4 }
+                .none {
+                    it > 4
+                }
         )
 
         assert(
@@ -99,7 +102,12 @@ class Test {
             t(1, 2) == t(2, 1).swap()
         )
 
-
+        val a: List<Super> = tupleOf(A(), B()).asIterable().toList()
     }
+
+    interface Super
+
+    class A : Super
+    class B : Super
 
 }
