@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "nl.jolanrensen.scalaTuplesInKotlin"
-version = "1.0-SNAPSHOT"
+version = "alpha03-scala2.12.10"
 
 java {
     withJavadocJar()
