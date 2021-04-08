@@ -4,11 +4,9 @@ This repo contains a bunch of files that provide extensions to make Scala Tuples
 # How to install
 Check Jitpack:
 
-Scala 2.13: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.13-SNAPSHOT)
+Scala 2.12.10 ([Kotlin Spark API](https://github.com/JetBrains/kotlin-spark-api)): [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha03-scala2.12.10-SNAPSHOT)
 
-Scala 2.12.10 ([Kotlin Spark API](https://github.com/JetBrains/kotlin-spark-api)): [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha02-scala2.12.10-SNAPSHOT)
-
-Scala 2.12.13: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.12-SNAPSHOT)
+Scala 2.13.5: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.13.5-SNAPSHOT)
 
 # Examples
 ## Creation: functional
