@@ -11,51 +11,65 @@ Scala 2.12.10 ([Kotlin Spark API](https://github.com/JetBrains/kotlin-spark-api)
 Scala 2.12.13: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.12-SNAPSHOT)
 
 # Examples
-## Creation
-The project adds simple functional Tuple builders in the form of `tupleOf()` and `t()` for short.
+## Creation: functional
+The project adds simple functional Tuple builders in the form of `tupleOf()`.
 
 This allows you to easily create the correct type of tuple with correct types like
 ```kotlin
-val yourTuple: Tuple3<Int, String, YourObject> = tupleOf(1, "test", a)
+val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = tupleOf(1, 5L, tupleOf("test", a))
 ```
-or for short
+
+## Creation: descriptive
+The project also adds a more descriptive way to create tuples using `u`:
 ```kotlin
-val yourTuple: Tuple3<Int, String, YourObject> = t(1, "test", a)
+val yourTuple: Tuple3<Int, Long, String> = 1 u 5L u "test"
+```
+and this method even includes a clever way to create tuples in tuples just like you world be able to do using the functions before:
+```kotlin
+val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = 1 u 5L u { "test" u a }
+```
+To create a `Tuple1` using the descriptive method, the following extension function was created:
+```kotlin
+val yourTuple: Tuple1<Int> = 5.u
 ```
 
 ## Tuple joining
 This project provides functions to easily merge two separate Scala Tuples into one.
-For example (using `t()` to create a new tuple): 
+For example (using `tupleOf()` to create a new tuple):
 ```kotlin
-t(a) concat t(b, c, d) == t(a, b, c, d)
+tupleOf(a).concat(tupleOf(b, c, d)) == tupleOf(a, b, c, d)
+```
+or
+```kotlin
+tupleOf(a) concat tupleOf(b, c, d) == tupleOf(a, b, c, d)
 ```
 or using the shorthand: 
 ```kotlin
-t(a) + t(b, c, d) == t(a, b, c, d)
+tupleOf(a) + tupleOf(b, c, d) == tupleOf(a, b, c, d)
 ```
 
 ## Tuple extending
 The project provides functions to easily extend Scala Tuples.
 
 This means you can easily create a new tuple appended-, or prepended by a new value or tuple.
-For example (using `t()` to create a new tuple):
+For example (using `tupleOf()` to create a new tuple):
 ```kotlin
-t(a, b).appendedBy(c) == t(a, b, c)
+tupleOf(a, b).appendedBy(c) == tupleOf(a, b, c)
 ```
 and
 ```kotlin
-t(a, b).prependedBy(c) == t(c, a, b)
+tupleOf(a, b).prependedBy(c) == tupleOf(c, a, b)
 ```
 or in shorthand:
 ```kotlin
-t(a, b)..c == t(a, b, c)
+tupleOf(a, b)..c == tupleOf(a, b, c)
 ```
 and
 ```kotlin
-c..t(a, b) == t(c, a, b)
+c..tupleOf(a, b) == tupleOf(c, a, b)
 ```
-Note that `t(a, b)..t(c, d)` will not work due to it being ambiguous:
-It could mean both `t(a, b, t(c, d))` and `t(t(a, b), c, d)`.
+Note that `tupleOf(a, b)..tupleOf(c, d)` will not work due to it being ambiguous:
+It could mean both `tupleOf(a, b, tupleOf(c, d))` and `tupleOf(tupleOf(a, b), c, d)`.
 So, for two tuples, you must use `appendedBy` and `prependedBy` explicitly.
 
 ## Product (Tuple) destructuring
@@ -64,6 +78,10 @@ This means you can type
 ```kotlin
 val (a, b, c, d) = yourTuple
 ``` 
+and even declare multiple variables at once, like in Python:
+```kotlin
+val (a, b, c, d) = 5 u 6L u "someText" u something
+```
 to unpack its values, similar to how `Pair`, `Triple` and other data classes work in Kotlin.
 
 ## Product (Tuple) textual accessors
@@ -75,25 +93,26 @@ yourTuple.second
 yourTuple.last
 ```
 etc. to access the value you require, similar to how `Pair` and `Triple` name their values in Kotlin.
+`yourTuple.last()` and `yourTuple.first()` are also present, similar to `List`s.
 
 ## Quality of life extensions
 There are also some other extensions built for `Product` types like Tuples. 
-These extensions are type-aware, meaning that `t(1, 2, 3).asIterable().toList()` will result in a `List<Int>`,
-while `t(1, 2.0, 3L).asIterable().toList()` will give a `List<Number>`.
+These extensions are type-aware, meaning that `tupleOf(1, 2, 3).asIterable().toList()` will result in a `List<Int>`,
+while `tupleOf(1, 2.0, 3L).asIterable().toList()` will give a `List<Number>`.
 For instance:
 
 ```kotlin
-1 in t(1, 2, 3) == true
+1 in tupleOf(1, 2, 3) == true
 
-for (x: String in t("a", "b", "c")) { /* ... */ }
+for (x: String in tupleOf("a", "b", "c")) { /* ... */ }
 
-val a: List<Number> = t(1, 2.0, 3L).asIterable().toList()
+val a: List<Number> = tupleOf(1, 2.0, 3L).asIterable().toList()
 
-val b: List<Int> = t(1, 5, 3).asIterable().toList()
+val b: List<Int> = tupleOf(1, 5, 3).asIterable().toList()
 
-t(1, 2, 3).size == 3
+tupleOf(1, 2, 3).size == 3
 
-t(1, 2, 3)[0] == 1
+tupleOf(1, 2, 3)[0] == 1
 
-t(1, 1, 2)[1..2] == t(1, 2, 2)[0..1]
+tupleOf(1, 1, 2)[1..2] == tupleOf(1, 2, 2)[0..1]
 ```

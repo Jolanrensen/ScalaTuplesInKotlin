@@ -9,17 +9,17 @@ import scala.collection.JavaConverters
  * For example:
  *
  * ```kotlin
- * 1 in t(1, 2, 3) == true
+ * 1 in tupleOf(1, 2, 3) == true
  *
- * for (x in t("a", "b", "c")) { ... }
+ * for (x in tupleOf("a", "b", "c")) { ... }
  *
- * val a: List<Any?> = t(1, "a", 3L).asIterable().toList()
+ * val a: List<Any?> = tupleOf(1, "a", 3L).asIterable().toList()
  *
- * t(1, 2, 3).size == 3
+ * tupleOf(1, 2, 3).size == 3
  *
- * t(1, 2, 3)[0] == 1
+ * tupleOf(1, 2, 3)[0] == 1
  *
- * t(1, 1, 2)[1..2] == t(1, 2, 2)[0..1]
+ * tupleOf(1, 1, 2)[1..2] == tupleOf(1, 2, 2)[0..1]
  * ```
  *
  *

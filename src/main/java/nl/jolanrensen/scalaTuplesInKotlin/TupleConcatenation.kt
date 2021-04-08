@@ -27,10 +27,10 @@ import scala.Tuple22
 /**
  * This file provides functions to easily merge two separate tuples into one.
  *
- * For example (using t() to create a new tuple):
- * ```t(a, b) concat t(c, d) == t(a, b, c, d)```
+ * For example (using tupleOf() to create a new tuple):
+ * ```tupleOf(a, b) concat tupleOf(c, d) == tupleOf(a, b, c, d)```
  * or using the shorthand:
- * ```t(a, b) + t(c, d) == t(a, b, c, d)```
+ * ```tupleOf(a, b) + tupleOf(c, d) == tupleOf(a, b, c, d)```
  *
  *
  * by Jolan Rensen, 26-02-2021

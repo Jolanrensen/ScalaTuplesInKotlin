@@ -26,6 +26,15 @@ import scala.Product21
 import scala.Product22
 import scala.collection.JavaConverters
 
+/**
+ * This file provides quality of life extensions for Products/Tuples where each of its types is the same.
+ * This includes converting to [Iterable] or getting an [Iterator] of a Product/Tuple,
+ * as well as taking a single value or slice from a Tuple/Product.
+ *
+ *
+ * by Jolan Rensen, 07-05-2021
+ */
+
 operator fun <T, T1: T> Product1<T1>.iterator(): Iterator<T> =  JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
 operator fun <T, T1: T, T2: T> Product2<T1, T2>.iterator(): Iterator<T> =  JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })
 operator fun <T, T1: T, T2: T, T3: T> Product3<T1, T2, T3>.iterator(): Iterator<T> =  JavaConverters.asJavaIterator<T>(productIterator().map<T> { it as T })

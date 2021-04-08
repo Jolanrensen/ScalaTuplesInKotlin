@@ -1,5 +1,6 @@
 package nl.jolanrensen.scalaTuplesInKotlin.building
 
+
 private fun main() {
     val alphabet = (1..22).toList()
     val words = listOf(
@@ -37,5 +38,8 @@ private fun main() {
                 "val <T> Product$a<${numbers.joinToString { if (it == nr) "T" else "*" }}>.${words[nr - 1]}: T get() = this._$nr()"
             )
         }
+
+        println("fun <T> Product$a<${numbers.joinToString { if (it == 1) "T" else "*" }}>.first(): T = this._1()")
+        println("fun <T> Product$a<${numbers.joinToString { if (it == numbers.last()) "T" else "*" }}>.last(): T = this._${numbers.last()}()")
     }
 }

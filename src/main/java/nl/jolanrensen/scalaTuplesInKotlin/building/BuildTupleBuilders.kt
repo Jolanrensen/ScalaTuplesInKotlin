@@ -33,7 +33,6 @@ private fun main() {
             
                 /** 
                  * Returns a new Tuple$a of the given arguments. 
-                 * @see [t] 
                  **/""".trimIndent()
         )
         println(
@@ -44,19 +43,19 @@ private fun main() {
 
     println()
 
-    for (a in alphabet) {
-        val numbers = (1..a).toList()
-
-        println("""
-            
-                /** 
-                 * Returns a new Tuple$a of the given arguments. 
-                 * @see [tupleOf] 
-                 **/""".trimIndent()
-        )
-        println(
-            "fun <${numbers.joinToString { "T$it" }}> t(${numbers.joinToString { "${ words[it - 1] }: T$it" }}): Tuple$a<${numbers.joinToString { "T$it" }}> = Tuple$a<${numbers.joinToString { "T$it" }}>(${numbers.joinToString { words[it - 1] }})"
-        )
-
-    }
+//    for (a in alphabet) {
+//        val numbers = (1..a).toList()
+//
+//        println("""
+//
+//                /**
+//                 * Returns a new Tuple$a of the given arguments.
+//                 * @see [tupleOf]
+//                 **/""".trimIndent()
+//        )
+//        println(
+//            "fun <${numbers.joinToString { "T$it" }}> t(${numbers.joinToString { "${ words[it - 1] }: T$it" }}): Tuple$a<${numbers.joinToString { "T$it" }}> = Tuple$a<${numbers.joinToString { "T$it" }}>(${numbers.joinToString { words[it - 1] }})"
+//        )
+//
+//    }
 }

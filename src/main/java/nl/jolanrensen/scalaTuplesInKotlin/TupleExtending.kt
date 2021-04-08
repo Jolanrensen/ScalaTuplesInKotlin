@@ -29,18 +29,18 @@ import scala.Tuple22
  *
  * This means you can easily create a new tuple appended-, or prepended by a new value or tuple.
  *
- * For example (using t() to create a new tuple):
- * ```t(a, b).appendedBy(c) == t(a, b, c)```
+ * For example (using tupleOf() to create a new tuple):
+ * ```tupleOf(a, b).appendedBy(c) == tupleOf(a, b, c)```
  * and
- * ```t(a, b).prependedBy(c) == t(c, a, b)```
+ * ```tupleOf(a, b).prependedBy(c) == tupleOf(c, a, b)```
  *
  * or in shorthand:
- * ```t(a, b)..c == t(a, b, c)```
+ * ```tupleOf(a, b)..c == tupleOf(a, b, c)```
  * and
- * ```c..t(a, b) == t(c, a, b)```
+ * ```c..tupleOf(a, b) == tupleOf(c, a, b)```
  *
- * Note that ```t(a, b)..t(c, d)``` will not work due to it being ambiguous:
- * It could mean both ```t(a, b, t(c, d))``` and ```t(t(a, b), c, d)```.
+ * Note that ```tupleOf(a, b)..tupleOf(c, d)``` will not work due to it being ambiguous:
+ * It could mean both ```tupleOf(a, b, tupleOf(c, d))``` and ```tupleOf(tupleOf(a, b), c, d)```.
  * So, for two tuples, you must use [appendedBy] and [prependedBy] explicitly.
  *
  * For concatenating two tuples, see [nl.jolanrensen.scalaTuplesInKotlin.concat].
