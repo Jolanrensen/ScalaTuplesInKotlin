@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "nl.jolanrensen.scalaTuplesInKotlin"
-version = "alpha03-scala2.12.10"
+version = "alpha03-scala2.13.5"
 
 java {
     withJavadocJar()
@@ -44,8 +44,8 @@ dependencies {
 
 //    implementation("org.scala-lang:scala-library:2.13.3") // <4>
 //    implementation("org.scala-lang:scala-reflect:2.13.3")
-    implementation("org.scala-lang:scala-library:2.12.10") // <4>
-    implementation("org.scala-lang:scala-reflect:2.12.10")
+    implementation("org.scala-lang:scala-library:2.13.5") // <4>
+    implementation("org.scala-lang:scala-reflect:2.13.5")
 
 //    implementation("org.jetbrains.kotlinx.spark:kotlin-spark-api-3.0:1.0.0-preview3-SNAPSHOT")
 
