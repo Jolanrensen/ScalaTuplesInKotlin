@@ -4,7 +4,7 @@ plugins {
 //    scala // not used here
     java
     kotlin("jvm") version "1.4.32"
-    application
+//    application
 //    maven
     `maven-publish`
     `java-library`
