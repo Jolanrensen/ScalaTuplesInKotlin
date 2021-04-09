@@ -5,7 +5,7 @@ plugins {
     java
     kotlin("jvm") version "1.4.32"
     application
-
+//    maven
     `maven-publish`
     `java-library`
 }
