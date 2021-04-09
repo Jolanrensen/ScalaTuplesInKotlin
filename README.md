@@ -95,8 +95,8 @@ etc. to access the value you require, similar to how `Pair` and `Triple` name th
 
 ## Quality of life extensions
 There are also some other extensions built for `Product` types like Tuples. 
-These extensions are type-aware, meaning that `tupleOf(1, 2, 3).asIterable().toList()` will result in a `List<Int>`,
-while `tupleOf(1, 2.0, 3L).asIterable().toList()` will give a `List<Number>`.
+These extensions are type-aware, meaning that `tupleOf(1, 2, 3).toList()` will result in a `List<Int>`,
+while `tupleOf(1, 2.0, 3L).toList()` will give a `List<Number>`.
 For instance:
 
 ```kotlin
@@ -104,9 +104,9 @@ For instance:
 
 for (x: String in tupleOf("a", "b", "c")) { /* ... */ }
 
-val a: List<Number> = tupleOf(1, 2.0, 3L).asIterable().toList()
+val a: List<Number> = tupleOf(1, 2.0, 3L).toList()
 
-val b: List<Int> = tupleOf(1, 5, 3).asIterable().toList()
+val b: List<Int> = tupleOf(1, 5, 3).toList()
 
 tupleOf(1, 2, 3).size == 3
 

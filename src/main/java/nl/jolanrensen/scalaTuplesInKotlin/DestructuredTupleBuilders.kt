@@ -45,6 +45,7 @@ import scala.Product
 val <T1> T1.u: Tuple1<T1> get() = Tuple1<T1>(this)
 
 infix fun <T1, T2> T1.u(next: T2): Tuple2<T1, T2> = Tuple2<T1, T2>(this, next)
+
 infix fun <T1, T2, T3> Tuple2<T1, T2>.u(next: T3): Tuple3<T1, T2, T3> = Tuple3<T1, T2, T3>(this._1(), this._2(), next)
 infix fun <T1, T2, T3, T4> Tuple3<T1, T2, T3>.u(next: T4): Tuple4<T1, T2, T3, T4> = Tuple4<T1, T2, T3, T4>(this._1(), this._2(), this._3(), next)
 infix fun <T1, T2, T3, T4, T5> Tuple4<T1, T2, T3, T4>.u(next: T5): Tuple5<T1, T2, T3, T4, T5> = Tuple5<T1, T2, T3, T4, T5>(this._1(), this._2(), this._3(), this._4(), next)
