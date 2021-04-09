@@ -1,6 +1,7 @@
 package nl.jolanrensen.scalaTuplesInKotlin
 
 import org.junit.Test
+import scala.reflect.internal.Trees
 
 
 class Test {
@@ -78,6 +79,13 @@ class Test {
         // { tuple } u { tuple }
         val g = { 1.u } u { 2L u "" }
         assert(g == tupleOf(tupleOf(1), tupleOf(2L, "")))
+
+        val u = "test"
+        val h = u u u u u
+        assert(h == tupleOf(u, u, u))
+
+        val i = { 1 u 'b' } u { "!" u 43+2 }
+        assert(i == tupleOf(tupleOf(1, 'b'), tupleOf("!", 43+2)))
 
 
         val tuple = { 1 u "b" u 5 } u 6 u "test" u { 6.u }
