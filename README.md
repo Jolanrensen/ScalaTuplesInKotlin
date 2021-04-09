@@ -1,6 +1,8 @@
 # Scala Tuples In Kotlin
 This repo contains a bunch of files that provide extensions to make Scala Tuples easier to use in Kotlin.
 
+For use without Scala and instead wrappers around Pair/Triple for any Kotlin platform, see [TuplesInKotlin](https://github.com/Jolanrensen/TuplesInKotlin).
+
 # How to install
 Check Jitpack:
 
