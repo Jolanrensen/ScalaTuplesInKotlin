@@ -41,6 +41,7 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation(kotlin("reflect"))
     testImplementation("junit", "junit", "4.12")
+    implementation(kotlin("script-runtime"))
 
 //    implementation("org.scala-lang:scala-library:2.13.3") // <4>
 //    implementation("org.scala-lang:scala-reflect:2.13.3")

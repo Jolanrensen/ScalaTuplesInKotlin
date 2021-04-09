@@ -69,6 +69,7 @@ infix fun <T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16
 infix fun <T1 : Product, T2> (() -> T1).u(next: T2): Tuple2<T1, T2> = Tuple2<T1, T2>(this(), next)
 infix fun <T1, T2 : Product> T1.u(next: () -> T2): Tuple2<T1, T2> = Tuple2<T1, T2>(this, next())
 infix fun <T1 : Product, T2: Product> (() -> T1).u(next: () -> T2): Tuple2<T1, T2> = Tuple2<T1, T2>(this(), next())
+
 infix fun <T1, T2, T3: Product> Tuple2<T1, T2>.u(next: () -> T3): Tuple3<T1, T2, T3> = Tuple3<T1, T2, T3>(this._1(), this._2(), next())
 infix fun <T1, T2, T3, T4: Product> Tuple3<T1, T2, T3>.u(next: () -> T4): Tuple4<T1, T2, T3, T4> = Tuple4<T1, T2, T3, T4>(this._1(), this._2(), this._3(), next())
 infix fun <T1, T2, T3, T4, T5: Product> Tuple4<T1, T2, T3, T4>.u(next: () -> T5): Tuple5<T1, T2, T3, T4, T5> = Tuple5<T1, T2, T3, T4, T5>(this._1(), this._2(), this._3(), this._4(), next())
