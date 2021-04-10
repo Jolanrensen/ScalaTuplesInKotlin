@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "nl.jolanrensen.scalaTuplesInKotlin"
-version = "1.0-SNAPSHOT"
+version = "alpha04-scala2.12.10"
 
 java {
     withJavadocJar()
@@ -23,7 +23,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "nl.jolanrensen.scala-tuples-in-kotlin"
             artifactId = "scala-tuples-in-kotlin"
-            version = "1.0-SNAPSHOT"
+            version = "alpha04-scala2.12.10"
 
             from(components["java"])
         }
