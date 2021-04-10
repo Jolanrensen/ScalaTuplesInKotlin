@@ -6,9 +6,9 @@ For use without Scala and instead wrappers around Pair/Triple for any Kotlin pla
 # How to install
 Check Jitpack:
 
-Scala 2.12.10 ([Kotlin Spark API](https://github.com/JetBrains/kotlin-spark-api)): [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha03-scala2.12.10-SNAPSHOT)
+Scala 2.12.10 ([Kotlin Spark API](https://github.com/JetBrains/kotlin-spark-api)): [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha03-scala2.12.10)
 
-Scala 2.13.5: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha01-scala2.13.5-SNAPSHOT)
+Scala 2.13.5: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha04-scala2.13.5)
 
 # Examples
 ## Creation: functional
