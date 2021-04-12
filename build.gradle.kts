@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion.VERSION_11
+import org.gradle.api.JavaVersion.VERSION_1_8
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -10,22 +12,29 @@ plugins {
     `java-library`
 }
 
-group = "nl.jolanrensen.scalaTuplesInKotlin"
+group = "nl.jolanrensen"
 version = "1.0-SNAPSHOT"
 
 java {
     withJavadocJar()
     withSourcesJar()
+    targetCompatibility = VERSION_1_8
+}
+
+val javadocJr by tasks.creating(Jar::class) {
+    archiveClassifier.value("javadoc")
 }
 
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "nl.jolanrensen.scala-tuples-in-kotlin"
-            artifactId = "scala-tuples-in-kotlin"
-            version = "1.0-SNAPSHOT"
+            groupId = group.toString()
+            artifactId = "scalaTuplesInKotlin"
+
+
 
             from(components["java"])
+//            from(components["kotlin"])
         }
     }
 }
@@ -34,7 +43,7 @@ repositories {
 //    mavenLocal()
     mavenCentral()
     jcenter()
-    maven(url= "https://jitpack.io")
+    maven(url = "https://jitpack.io")
 }
 
 dependencies {
@@ -55,7 +64,6 @@ dependencies {
 //    implementation("org.apache.spark:spark-sql_2.12:3.0.0")
 //    implementation("org.apache.spark:spark-core_2.12:3.0.0")
 //    implementation("org.apache.spark:spark-streaming_2.12:3.0.0")
-
 
 
 }
