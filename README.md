@@ -115,4 +115,6 @@ tupleOf(1, 2, 3).size == 3
 tupleOf(1, 2, 3)[0] == 1
 
 tupleOf(1, 1, 2)[1..2] == tupleOf(1, 2, 2)[0..1]
+
+tupleOf(1, 2, 3).dropLast() == tupleOf(0, 1, 2).dropFirst()
 ```

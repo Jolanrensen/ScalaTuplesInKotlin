@@ -123,6 +123,16 @@ class Test {
 
     }
 
+    @Test
+    fun `Test drop functions`() {
+        assert(
+            tupleOf(1, 2L, "").dropLast() == tupleOf(1, 2L)
+        )
+
+        assert(
+            tupleOf(1, 2L, "").dropFirst() == tupleOf(2L, "")
+        )
+    }
 
     @Test
     fun `Test tuple QOL functions`() {
