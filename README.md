@@ -35,7 +35,7 @@ val yourTuple: Tuple1<Int> = 5.u
 One issue currently if you add a Tuple inside a Tuple is that there is no difference between the `u` creation. To fix this, simply add `{}` around your Tuple.
 Yes, I'm still exploring the notation for this. For example: 
 ```kotlin
-val yourSecondTuple: Tuple2<Tuple2<Int, String>, String>> = { yourTuple } u "something"
+val yourSecondTuple: Tuple2<Tuple2<Int, String>, String> = { yourTuple } u "something"
 ```
 
 ## Tuple joining
