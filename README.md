@@ -32,6 +32,11 @@ To create a `Tuple1` using the descriptive method, the following extension funct
 ```kotlin
 val yourTuple: Tuple1<Int> = 5.u
 ```
+One issue currently if you add a Tuple inside a Tuple is that there is no difference between the `u` creation. To fix this, simply add `{}` around your Tuple.
+Yes, I'm still exploring the notation for this. For example: 
+```kotlin
+val yourSecondTuple: Tuple2<Tuple2<Int, String>, String> = { yourTuple } u "something"
+```
 
 ## Tuple joining
 This project provides functions to easily merge two separate Scala Tuples into one.
