@@ -18,7 +18,7 @@ val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = tupleOf(1, 5L, tu
 ```
 or
 ```kotlin
-val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = c(1, 5L, tupleOf("test", a))
+val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = c(1, 5L, c("test", a))
 ```
 
 ## Tuple joining
