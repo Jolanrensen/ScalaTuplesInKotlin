@@ -6,9 +6,7 @@ For use without Scala and instead wrappers around Pair/Triple for any Kotlin pla
 # How to install
 Check Jitpack:
 
-Scala 2.12.10 ([Kotlin Spark API](https://github.com/JetBrains/kotlin-spark-api)): [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha03-scala2.12.10)
-
-Scala 2.13.5: [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/alpha04-scala2.13.5)
+Scala 2.12.15 ([Kotlin Spark API](https://github.com/JetBrains/kotlin-spark-api)): [![](https://jitpack.io/v/Jolanrensen/ScalaTuplesInKotlin.svg)](https://jitpack.io/#Jolanrensen/ScalaTuplesInKotlin/spark-api-SNAPSHOT)
 
 # Examples
 ## Creation: functional
@@ -18,24 +16,9 @@ This allows you to easily create the correct type of tuple with correct types li
 ```kotlin
 val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = tupleOf(1, 5L, tupleOf("test", a))
 ```
-
-## Creation: descriptive
-The project also adds a more descriptive way to create tuples using `u`:
+or
 ```kotlin
-val yourTuple: Tuple3<Int, Long, String> = 1 u 5L u "test"
-```
-and this method even includes a clever way to create tuples in tuples just like you world be able to do using the functions before:
-```kotlin
-val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = 1 u 5L u { "test" u a }
-```
-To create a `Tuple1` using the descriptive method, the following extension function was created:
-```kotlin
-val yourTuple: Tuple1<Int> = 5.u
-```
-One issue currently if you add a Tuple inside a Tuple is that there is no difference between the `u` creation. To fix this, simply add `{}` around your Tuple.
-Yes, I'm still exploring the notation for this. For example: 
-```kotlin
-val yourSecondTuple: Tuple2<Tuple2<Int, String>, String> = { yourTuple } u "something"
+val yourTuple: Tuple4<Int, Long, Tuple2<String, YourObject>> = c(1, 5L, tupleOf("test", a))
 ```
 
 ## Tuple joining
@@ -85,7 +68,7 @@ val (a, b, c, d) = yourTuple
 ``` 
 and even declare multiple variables at once, like in Python:
 ```kotlin
-val (a, b, c, d) = 5 u 6L u "someText" u something
+val (a, b, c, d) = c(5, 6L, "someText", something)
 ```
 to unpack its values, similar to how `Pair`, `Triple` and other data classes work in Kotlin.
 
@@ -111,7 +94,7 @@ For instance:
 
 for (x: String in tupleOf("a", "b", "c")) { /* ... */ }
 
-val a: List<Number> = tupleOf(1, 2.0, 3L).toList()
+val a: List<Number> = c(1, 2.0, 3L).toList()
 
 val b: List<Int> = tupleOf(1, 5, 3).toList()
 
@@ -119,7 +102,7 @@ tupleOf(1, 2, 3).size == 3
 
 tupleOf(1, 2, 3)[0] == 1
 
-tupleOf(1, 1, 2)[1..2] == tupleOf(1, 2, 2)[0..1]
+c(1, 1, 2)[1..2] == tupleOf(1, 2, 2)[0..1]
 
 tupleOf(1, 2, 3).dropLast() == tupleOf(0, 1, 2).dropFirst()
 ```
