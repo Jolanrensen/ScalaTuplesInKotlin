@@ -17,6 +17,14 @@ class Test {
 
     @Test
     fun `Test tuple concatenation`() {
+//
+//        val a = t(1, "hoi Joyce", 5L)
+//        val b = t("iets")
+//
+//        val c = a + b
+//
+//
+//
         assert(
             tupleOf(1) + tupleOf("test") == tupleOf(1, "test")
         )
@@ -42,6 +50,87 @@ class Test {
 
         assert(
             tupleOf(1).appendedBy(tupleOf("test")) == tupleOf(1, tupleOf("test"))
+        )
+    }
+
+    @Test
+    fun `Test tuple copying`() {
+        assert(
+            t(1, "a") == t(1, "b").copy(second = "a")
+        )
+
+        assert(
+            t(
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1, // different!
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+            ) == t(
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+            ).copy(
+                    first = 0,
+                    second = 0,
+                    third = 0,
+                    fourth = 0,
+                    fifth = 0,
+                    sixth = 0,
+                    seventh = 0,
+                    eighth = 0,
+                    ninth = 0,
+                    //tenth = keep same
+                    eleventh = 0,
+                    twelfth = 0,
+                    thirteenth = 0,
+                    fourteenth = 0,
+                    fifteenth = 0,
+                    sixteenth = 0,
+                    seventeenth = 0,
+                    eighteenth = 0,
+                    nineteenth = 0,
+                    twentieth = 0,
+                    twentyFirst = 0,
+                    twentySecond = 0,
+                )
+
         )
     }
 
@@ -145,10 +234,7 @@ class Test {
         )
 
         assert(
-            tupleOf(1, 2, 3)
-                .iterator()
-                .asSequence()
-                .toSet() == setOf(1, 2, 3)
+            tupleOf(1, 2, 3).iterator().asSequence().toSet() == setOf(1, 2, 3)
         )
 
         for (it in tupleOf(1, 1, 1)) {
@@ -159,13 +245,9 @@ class Test {
             tupleOf(1, 2, 3).toList().isNotEmpty()
         )
 
-        assert(
-            tupleOf(1, 2, 3)
-                .asIterable()
-                .none {
-                    it > 4
-                }
-        )
+        assert(tupleOf(1, 2, 3).asIterable().none {
+                it > 4
+            })
 
         assert(
             tupleOf(1, 2, 3, 4, 5).size == 5
@@ -180,8 +262,7 @@ class Test {
         )
 
         assert(
-            tupleOf(1, 2, 3, 4, 5, 6, 7)[1..3]
-                .containsAll(listOf(2, 3, 4))
+            tupleOf(1, 2, 3, 4, 5, 6, 7)[1..3].containsAll(listOf(2, 3, 4))
         )
 
         assert(
