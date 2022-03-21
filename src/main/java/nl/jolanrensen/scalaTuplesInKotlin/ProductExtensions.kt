@@ -2,6 +2,7 @@ package nl.jolanrensen.scalaTuplesInKotlin
 
 import scala.Product
 import scala.collection.JavaConverters
+import kotlin.jvm.Throws
 
 /**
  * Extra extensions for Scala [Product]s such as Tuples.
@@ -37,7 +38,18 @@ fun Product.asIterable(): Iterable<Any?> = object : Iterable<Any?> {
 val Product.size: Int
     get() = productArity()
 
+@Throws(IndexOutOfBoundsException::class)
 operator fun Product.get(index: Int): Any? = productElement(index)
+fun Product.getOrNull(index: Int): Any? = if (index in 0 until size) productElement(index) else null
 
-operator fun Product.get(indexRange: IntRange): List<Any?> = indexRange.map { productElement(it) }
+@Throws(IndexOutOfBoundsException::class, ClassCastException::class)
+fun <T> Product.getAs(index: Int): T = productElement(index) as T
+fun <T> Product.getAsOrNull(index: Int): T? = getOrNull(index) as? T
 
+@Throws(IndexOutOfBoundsException::class)
+operator fun Product.get(indexRange: IntRange): List<Any?> = indexRange.map(::get)
+fun Product.getOrNull(indexRange: IntRange): List<Any?> = indexRange.map(::getOrNull)
+
+@Throws(IndexOutOfBoundsException::class, ClassCastException::class)
+fun <T> Product.getAs(indexRange: IntRange): List<T> = indexRange.map(::getAs)
+fun <T> Product.getAsOrNull(indexRange: IntRange): List<T?> = indexRange.map(::getAsOrNull)
