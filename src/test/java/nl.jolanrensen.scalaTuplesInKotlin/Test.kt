@@ -9,22 +9,13 @@ class Test {
     @Test
     fun `Test tuple textual accessors`() {
         val a = tupleOf(1, 2, 3)
-        assert(a.first == 1)
-        assert(a.first == 1)
-        assert(a.second == 2)
-        assert(a.third == a.last() && a.last() == 3)
+        assert(a.first() == 1)
+        assert(a.dropFirst().first() == 2)
+        assert(a.last() == 3)
     }
 
     @Test
     fun `Test tuple concatenation`() {
-//
-//        val a = t(1, "hoi Joyce", 5L)
-//        val b = t("iets")
-//
-//        val c = a + b
-//
-//
-//
         assert(
             tupleOf(1) + tupleOf("test") == tupleOf(1, "test")
         )
@@ -55,8 +46,9 @@ class Test {
 
     @Test
     fun `Test tuple copying`() {
+        val a = 1 t 1 t 1 t 1
         assert(
-            t(1, "a") == t(1, "b").copy(second = "a")
+            1 t "a" == t(1, "b").copy(_2 = "a")
         )
 
         assert(
@@ -107,29 +99,29 @@ class Test {
                 1,
                 1,
             ).copy(
-                    first = 0,
-                    second = 0,
-                    third = 0,
-                    fourth = 0,
-                    fifth = 0,
-                    sixth = 0,
-                    seventh = 0,
-                    eighth = 0,
-                    ninth = 0,
-                    //tenth = keep same
-                    eleventh = 0,
-                    twelfth = 0,
-                    thirteenth = 0,
-                    fourteenth = 0,
-                    fifteenth = 0,
-                    sixteenth = 0,
-                    seventeenth = 0,
-                    eighteenth = 0,
-                    nineteenth = 0,
-                    twentieth = 0,
-                    twentyFirst = 0,
-                    twentySecond = 0,
-                )
+                _1 = 0,
+                _2 = 0,
+                _3 = 0,
+                _4 = 0,
+                _5 = 0,
+                _6 = 0,
+                _7 = 0,
+                _8 = 0,
+                _9 = 0,
+                // _10 keep same
+                _11 = 0,
+                _12 = 0,
+                _13 = 0,
+                _14 = 0,
+                _15 = 0,
+                _16 = 0,
+                _17 = 0,
+                _18 = 0,
+                _19 = 0,
+                _20 = 0,
+                _21 = 0,
+                _22 = 0,
+            )
 
         )
     }
@@ -246,8 +238,8 @@ class Test {
         )
 
         assert(tupleOf(1, 2, 3).asIterable().none {
-                it > 4
-            })
+            it > 4
+        })
 
         assert(
             tupleOf(1, 2, 3, 4, 5).size == 5
