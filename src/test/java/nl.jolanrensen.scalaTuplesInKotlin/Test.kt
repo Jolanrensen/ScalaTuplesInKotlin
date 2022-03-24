@@ -1,6 +1,7 @@
 package nl.jolanrensen.scalaTuplesInKotlin
 
 import org.junit.Test
+import scala.Tuple1
 import scala.Tuple2
 import scala.Tuple3
 import scala.Tuple4
@@ -30,19 +31,27 @@ class Test {
 
     @Test
     fun `Test all tuple creation methods`() {
+
+        val a: Tuple3<Int, Int, Int> = t(1) + 2 + 3
+        val b: Tuple3<Int, Int, Int> = 1 + t(2) + 3
+        val c: Tuple3<Int, Int, Int> = t(1, 2) + t(3)
+        val d: Tuple3<Int, Int, Int> = t(1, 2).concat(t(3))
+        val e: Tuple3<Int, Int, Tuple1<Int>> = t(1, 2).appendedBy(t(3))
+
         listOf(
-            t % 1 % 2L % "3",
-            1 % t % 2L % "3",
-            t() % 1 % 2L % "3",
-            tupleOf() % 1 % 2L % "3",
-            EmptyTuple % 1 % 2L % "3",
-            emptyTuple() % 1 % 2L % "3",
+            1 then 2L then "3",
+            t + 1 + 2L + "3",
+            1 + t + 2L + "3",
+            t() + 1 + 2L + "3",
+            tupleOf() + 1 + 2L + "3",
+            EmptyTuple + 1 + 2L + "3",
+            emptyTuple() + 1 + 2L + "3",
             t(1, 2L, "3"),
             tupleOf(1, 2L, "3"),
             Tuple3(1, 2L, "3"),
-            t(1, 2L) % "3",
-            1 % t(2L) % "3",
-            1 % t(2L, "3"),
+            t(1, 2L) + "3",
+            1 + t(2L) + "3",
+            1 + t(2L, "3"),
         ).forEach {
             assert(it == t(1, 2L, "3"))
         }
@@ -70,15 +79,15 @@ class Test {
     @Test
     fun `Test tuple extending`() {
         assert(
-            tupleOf(1) % "test" == tupleOf(1, "test")
+            (tupleOf(1) + "test") == tupleOf(1, "test")
         )
 
         assert(
-            1 % tupleOf("test") == tupleOf(1, "test")
+            1 + tupleOf("test") == tupleOf(1, "test")
         )
 
         assert(
-            1 % tupleOf("test") % 6L == tupleOf(1, "test", 6L)
+            1 + tupleOf("test") + 6L == tupleOf(1, "test", 6L)
         )
 
         assert(
@@ -90,7 +99,7 @@ class Test {
     @Test
     fun `Test tuple copying`() {
         assert(
-            t % 1 % "a" == t(1, "b").copy(_2 = "a")
+            (t + 1 + "a") == t(1, "b").copy(_2 = "a")
         )
 
         assert(
