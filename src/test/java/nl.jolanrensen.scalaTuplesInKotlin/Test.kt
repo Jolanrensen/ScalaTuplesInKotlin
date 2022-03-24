@@ -1,14 +1,36 @@
 package nl.jolanrensen.scalaTuplesInKotlin
 
 import org.junit.Test
+import scala.Tuple2
+import scala.Tuple3
+import scala.Tuple4
 import scala.reflect.internal.Trees
+import java.io.Serializable
+
+@Deprecated("Use Scala tuples instead.", ReplaceWith("Tuple1<T1>(_1)", "scala.Tuple1"))
+data class Arity1<T1>(val _1: T1) : Serializable
+
+@Deprecated("Use Scala tuples instead.", ReplaceWith("Tuple2<T1, T2>(_1, _2)", "scala.Tuple2"))
+data class Arity2<T1, T2>(val _1: T1, val _2: T2) : Serializable
+
+
+@Deprecated("Use Scala tuples instead.", ReplaceWith("t(_1, _2)"))
+fun <T1, T2> c(_1: T1, _2: T2): Arity2<T1, T2> = Arity2<T1, T2>(_1, _2)
 
 
 class Test {
 
     @Test
+    fun test() {
+        val a = Arity2("1", 4)
+        val b = c("1", 4)
+        val c = Arity2("1", 4)
+        val df = Arity2("1", 4)
+    }
+
+    @Test
     fun `Test tuple textual accessors`() {
-        val a = tupleOf(1, 2, 3)
+        val a: Tuple3<Int, Int, Int> = tupleOf(1, 2, 3)
         assert(a.first() == 1)
         assert(a.dropFirst().first() == 2)
         assert(a.last() == 3)
@@ -28,15 +50,15 @@ class Test {
     @Test
     fun `Test tuple extending`() {
         assert(
-            tupleOf(1).."test" == tupleOf(1, "test")
+            tupleOf(1) % "test" == tupleOf(1, "test")
         )
 
         assert(
-            1..tupleOf("test") == tupleOf(1, "test")
+            1 % tupleOf("test") == tupleOf(1, "test")
         )
 
         assert(
-            1..tupleOf("test")..6L == tupleOf(1, "test", 6L)
+            1 % tupleOf("test") % 6L == tupleOf(1, "test", 6L)
         )
 
         assert(
@@ -44,11 +66,14 @@ class Test {
         )
     }
 
+
     @Test
     fun `Test tuple copying`() {
-        val a = 1 t 1 t 1 t 1
+        val a: Tuple4<Int, Double, Long, String> = t % 1 % 2.0 % 3L % "aaa"
+        val a: Tuple4<Int, Double, Long, String> = t % 1 % 2.0 % 3L % "aaa"
+
         assert(
-            1 t "a" == t(1, "b").copy(_2 = "a")
+            t % 1 % "a" == t(1, "b").copy(_2 = "a")
         )
 
         assert(
@@ -213,10 +238,23 @@ class Test {
         assert(
             tupleOf(1, 2L, "").dropFirst() == tupleOf(2L, "")
         )
+
+        assert(
+            tupleOf(1).dropFirst() == tupleOf()
+        )
+
+        assert(
+            tupleOf(1).dropLast() == tupleOf()
+        )
     }
 
     @Test
     fun `Test tuple QOL functions`() {
+
+        assert(
+            0 !in tupleOf()
+        )
+
         assert(
             1 in tupleOf(1, 2, 3)
         )

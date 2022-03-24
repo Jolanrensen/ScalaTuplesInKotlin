@@ -32,6 +32,9 @@ private fun main() {
     for (a in alphabet) {
         val numbers = (1..a).toList()
         println(
+            "fun <${numbers.joinToString { "T$it" }}> Tuple$a<${numbers.joinToString { "T$it" }}>.clone(): Tuple$a<${numbers.joinToString { "T$it" }}> = Tuple$a<${numbers.joinToString { "T$it" }}>(${numbers.joinToString { "this._$it()" }})"
+        )
+        println(
             "fun <${numbers.joinToString { "T$it" }}> Tuple$a<${numbers.joinToString { "T$it" }}>.copy(${numbers.joinToString { "_$it: T$it = this._$it()" }}): Tuple$a<${numbers.joinToString { "T$it" }}> = Tuple$a<${numbers.joinToString { "T$it" }}>(${numbers.joinToString { "_$it" }})"
         )
     }

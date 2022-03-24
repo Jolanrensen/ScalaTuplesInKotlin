@@ -33,11 +33,11 @@ private fun main() {
         @OptIn(ExperimentalStdlibApi::class)
         val numbers = (1..a).toList()
 
-//        for (nr in numbers) {
-//            println(
-//                "val <T> Product$a<${numbers.joinToString { if (it == nr) "T" else "*" }}>.${words[nr - 1]}: T get() = this._$nr()"
-//            )
-//        }
+        for (nr in numbers) {
+            println(
+                "\nval <T> Product$a<${numbers.joinToString { if (it == nr) "T" else "*" }}>._$nr: T get() = this._$nr()"
+            )
+        }
 
         println("\n/** Returns the first value of this Tuple or Product. */")
         println("fun <T> Product$a<${numbers.joinToString { if (it == 1) "T" else "*" }}>.first(): T = this._1()")

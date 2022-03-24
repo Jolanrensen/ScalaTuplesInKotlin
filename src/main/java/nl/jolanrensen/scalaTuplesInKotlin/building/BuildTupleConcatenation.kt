@@ -1,11 +1,21 @@
 package nl.jolanrensen.scalaTuplesInKotlin.building
 
+import nl.jolanrensen.scalaTuplesInKotlin.EmptyTuple
+import scala.Tuple1
+
+
 private fun main() {
     val alphabet = (1..22).toList()
 
     for (a in alphabet) {
         val numbers1 = (1..a).toList()
 
+        println(
+            "infix fun <${numbers1.joinToString { "T$it" }}> EmptyTuple.concat(other: Tuple$a<${numbers1.joinToString { "T$it" }}>): Tuple$a<${numbers1.joinToString { "T$it" }}> = other.clone()"
+        )
+        println(
+            "infix fun <${numbers1.joinToString { "T$it" }}> Tuple$a<${numbers1.joinToString { "T$it" }}>.concat(other: EmptyTuple): Tuple$a<${numbers1.joinToString { "T$it" }}> = this.clone()"
+        )
         for (b in alphabet) {
             val numbers2 = (a + 1..a + b).toList()
 
@@ -24,6 +34,13 @@ private fun main() {
 
     for (a in alphabet) {
         val numbers1 = (1..a).toList()
+
+        println(
+            "operator fun <${numbers1.joinToString { "T$it" }}> EmptyTuple.plus(other: Tuple$a<${numbers1.joinToString { "T$it" }}>): Tuple$a<${numbers1.joinToString { "T$it" }}> = other.clone()"
+        )
+        println(
+            "operator fun <${numbers1.joinToString { "T$it" }}> Tuple$a<${numbers1.joinToString { "T$it" }}>.plus(other: EmptyTuple): Tuple$a<${numbers1.joinToString { "T$it" }}> = this.clone()"
+        )
 
         for (b in alphabet) {
             val numbers2 = (a + 1..a + b).toList()
