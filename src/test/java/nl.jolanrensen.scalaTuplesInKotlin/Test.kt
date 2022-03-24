@@ -29,6 +29,26 @@ class Test {
     }
 
     @Test
+    fun `Test all tuple creation methods`() {
+        listOf(
+            t % 1 % 2L % "3",
+            1 % t % 2L % "3",
+            t() % 1 % 2L % "3",
+            tupleOf() % 1 % 2L % "3",
+            EmptyTuple % 1 % 2L % "3",
+            emptyTuple() % 1 % 2L % "3",
+            t(1, 2L, "3"),
+            tupleOf(1, 2L, "3"),
+            Tuple3(1, 2L, "3"),
+            t(1, 2L) % "3",
+            1 % t(2L) % "3",
+            1 % t(2L, "3"),
+        ).forEach {
+            assert(it == t(1, 2L, "3"))
+        }
+    }
+
+    @Test
     fun `Test tuple textual accessors`() {
         val a: Tuple3<Int, Int, Int> = tupleOf(1, 2, 3)
         assert(a.first() == 1)
@@ -69,9 +89,6 @@ class Test {
 
     @Test
     fun `Test tuple copying`() {
-        val a: Tuple4<Int, Double, Long, String> = t % 1 % 2.0 % 3L % "aaa"
-        val a: Tuple4<Int, Double, Long, String> = t % 1 % 2.0 % 3L % "aaa"
-
         assert(
             t % 1 % "a" == t(1, "b").copy(_2 = "a")
         )
