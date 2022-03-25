@@ -21,5 +21,5 @@ object EmptyTuple : Product, Serializable {
     override fun toString(): String = "()"
 }
 
-public val t: EmptyTuple = EmptyTuple
+//public val t: EmptyTuple = EmptyTuple
 public fun emptyTuple(): EmptyTuple = EmptyTuple

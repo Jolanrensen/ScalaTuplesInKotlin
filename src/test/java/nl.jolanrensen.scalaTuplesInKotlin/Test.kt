@@ -18,7 +18,9 @@ data class Arity2<T1, T2>(val _1: T1, val _2: T2) : Serializable
 @Deprecated("Use Scala tuples instead.", ReplaceWith("t(_1, _2)"))
 fun <T1, T2> c(_1: T1, _2: T2): Arity2<T1, T2> = Arity2<T1, T2>(_1, _2)
 
-
+/**
+ * Note that [String.plus]
+ */
 class Test {
 
     @Test
@@ -35,13 +37,16 @@ class Test {
         val a: Tuple3<Int, Int, Int> = t(1) + 2 + 3
         val b: Tuple3<Int, Int, Int> = 1 + t(2) + 3
         val c: Tuple3<Int, Int, Int> = t(1, 2) + t(3)
-        val d: Tuple3<Int, Int, Int> = t(1, 2).concat(t(3))
-        val e: Tuple3<Int, Int, Tuple1<Int>> = t(1, 2).appendedBy(t(3))
+        val d: Tuple3<Int, Int, Tuple1<Int>> = t(1, 2) + t(t(3))
+        val e: Tuple3<Int, Int, Int> = t(1, 2) concat t(3)
+        val f: Tuple3<Int, Int, Tuple1<Int>> = t(1, 2).appendedBy(t(3))
+
+        val easyToTypeTuple = 1 X 2L X "3"
 
         listOf(
-            1 then 2L then "3",
-            t + 1 + 2L + "3",
-            1 + t + 2L + "3",
+            1 X 2L X "3",
+            t() + 1 + 2L + "3",
+            1 + t() + 2L + "3",
             t() + 1 + 2L + "3",
             tupleOf() + 1 + 2L + "3",
             EmptyTuple + 1 + 2L + "3",
@@ -99,7 +104,7 @@ class Test {
     @Test
     fun `Test tuple copying`() {
         assert(
-            (t + 1 + "a") == t(1, "b").copy(_2 = "a")
+            (t() + 1 + "a") == t(1, "b").copy(_2 = "a")
         )
 
         assert(
