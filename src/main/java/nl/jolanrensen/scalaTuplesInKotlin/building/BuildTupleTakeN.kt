@@ -7,6 +7,10 @@ private fun main() {
     for (a in alphabet) {
         val numbers = (1..a).toList()
 
+        println(
+            "fun Tuple$a<${numbers.joinToString { "*" }}>.take0(): EmptyTuple = EmptyTuple"
+        )
+
         for (nr in numbers) {
             val types = numbers.map { if (it <= nr) "T$it" else "*" }
             val allTypesTrimmed = types.filter { it != "*" }.joinToString()
@@ -27,6 +31,10 @@ private fun main() {
     for (a in alphabet) {
         val numbers = (a downTo 1).toList()
 
+        println(
+            "fun Tuple$a<${numbers.joinToString { "*" }}>.takeLast0(): EmptyTuple = EmptyTuple"
+        )
+
         for (nr in numbers) {
             val types = numbers.map { if (it <= nr) "T${a + 1 - it}" else "*" }
             val allTypesTrimmed = types.filter { it != "*" }.joinToString()
@@ -39,5 +47,4 @@ private fun main() {
             )
         }
     }
-
 }
