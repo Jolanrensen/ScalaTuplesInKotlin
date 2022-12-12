@@ -1,6 +1,6 @@
 # Scala Tuples In Kotlin (Deprecated)
 The work is continued in the Kotlin Spark Api (https://github.com/Kotlin/kotlin-spark-api/wiki/Tuples)
-and can be imported separately without Spark (https://search.maven.org/search?q=g:%22org.jetbrains.kotlinx.spark%22%20scala_tuples_in_kotlin)
+and can be used separately without Spark (https://search.maven.org/search?q=g:%22org.jetbrains.kotlinx.spark%22%20scala_tuples_in_kotlin)
 
 This repo contains a bunch of files that provide extensions to make Scala Tuples easier to use in Kotlin.
 
